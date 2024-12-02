@@ -1,0 +1,67 @@
+:root {
+  --primary-color: #646cff;
+  --secondary-color: #323680;
+  --table-bg-color: #1a1a1a;
+  --text-color: white;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.table-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 2fr;
+  background-color: var(--table-bg-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-header,
+.table-body {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+
+  &:last-of-type .table-cell {
+    border-bottom: none;
+  }
+}
+
+.table-header {
+  font-weight: 500;
+  color: var(--primary-color);
+
+  .table-cell {
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+  }
+}
+
+.table-cell {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--secondary-color);
+}
